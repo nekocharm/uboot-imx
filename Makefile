@@ -1200,8 +1200,9 @@ $(filter-out tools, $(u-boot-dirs)): tools
 # is "yes"), so compile examples after U-Boot is compiled.
 examples: $(filter-out examples, $(u-boot-dirs))
 
+# echo "$(UBOOTVERSION)$$($(CONFIG_SHELL) $(srctree)/scripts/setlocalversion $(srctree))"
 define filechk_uboot.release
-	echo "$(UBOOTVERSION)$$($(CONFIG_SHELL) $(srctree)/scripts/setlocalversion $(srctree))"
+	echo "$(UBOOTVERSION)"
 endef
 
 # Store (new) UBOOTRELEASE string in include/config/uboot.release
